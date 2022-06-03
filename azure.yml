@@ -1,0 +1,11 @@
+- hosts: localhost
+  vars:
+    rgname: "ansibleondocker"
+  connection: local
+  collections:
+    - azure.azcollection  
+  tasks:
+    - name: Creating resource group
+      azure_rm_resourcegroup:
+        name: {{ rgname }}
+        location: "West US"
